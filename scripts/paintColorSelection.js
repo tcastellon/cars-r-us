@@ -1,7 +1,16 @@
 
+const colorChangeHandler = (changeEvent) => {
+    if(changeEvent.target.id === "color") {
+        const chosenOption = changeEvent.target.value
+        console.log(chosenOption)
+    }
+}
+
 export const colorOptions = async () => {
     const response = await fetch("http://localhost:8088/paintColors")
     const paintColors = await response.json()
+    
+    document.addEventListener("change", colorChangeHandler)
 
     let paintColorHTML = `
         <select id="color">

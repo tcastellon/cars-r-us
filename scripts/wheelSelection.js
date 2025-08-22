@@ -1,7 +1,16 @@
 
+const wheelChangeHandler = (changeEvent) => {
+    if(changeEvent.target.id === "wheel") {
+        const chosenOption = changeEvent.target.value
+        console.log(chosenOption)
+    }
+}
+
 export const wheelOptions = async () => {
     const response = await fetch("http://localhost:8088/wheels")
     const wheels = await response.json()
+
+    document.addEventListener("change", wheelChangeHandler)
 
     let wheelHTML = `
         <select id="wheel">
