@@ -5,11 +5,11 @@ export const colorOptions = async () => {
 
     let paintColorHTML = `
         <select id="color">
-            <option value="0">Prompt to select resource...</option>`
+            <option value="0">Select Option</option>`
 
     for (const color of paintColors) {
         paintColorHTML += `<option value="${color.id}">${color.color}</option>`
     }
+    paintColorHTML += `</select>`
     return paintColorHTML
 }
-
