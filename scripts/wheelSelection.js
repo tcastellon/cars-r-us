@@ -2,7 +2,7 @@
 const wheelChangeHandler = (changeEvent) => {
     if(changeEvent.target.id === "wheel") {
         const chosenOption = changeEvent.target.value
-        console.log(chosenOption)
+        console.log(parseInt(chosenOption))
     }
 }
 

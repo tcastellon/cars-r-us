@@ -2,7 +2,7 @@
 const techChangeHandler = (changeEvent) => {
     if(changeEvent.target.id === "technology") {
         const chosenOption = changeEvent.target.value
-        console.log(chosenOption)
+        console.log(parseInt(chosenOption))
     }
 }
 

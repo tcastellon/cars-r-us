@@ -2,7 +2,7 @@
 const interiorChangeHandler = (changeEvent) => {
     if(changeEvent.target.id === "interior") {
         const chosenOption = changeEvent.target.value
-        console.log(chosenOption)
+        console.log(parseInt(chosenOption))
     }
 }
 

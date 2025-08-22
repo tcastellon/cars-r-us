@@ -2,7 +2,7 @@
 const colorChangeHandler = (changeEvent) => {
     if(changeEvent.target.id === "color") {
         const chosenOption = changeEvent.target.value
-        console.log(chosenOption)
+        console.log(parseInt(chosenOption))
     }
 }
 
