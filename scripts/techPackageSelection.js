@@ -1,8 +1,9 @@
+import { setTechnology } from "./transientState.js"
 
 const techChangeHandler = (changeEvent) => {
     if(changeEvent.target.id === "technology") {
         const chosenOption = changeEvent.target.value
-        console.log(parseInt(chosenOption))
+        setTechnology(parseInt(chosenOption))
     }
 }
 

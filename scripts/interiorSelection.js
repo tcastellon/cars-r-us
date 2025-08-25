@@ -1,8 +1,9 @@
+import { setInterior } from "./transientState.js"
 
 const interiorChangeHandler = (changeEvent) => {
     if(changeEvent.target.id === "interior") {
         const chosenOption = changeEvent.target.value
-        console.log(parseInt(chosenOption))
+        setInterior(parseInt(chosenOption))
     }
 }
 
