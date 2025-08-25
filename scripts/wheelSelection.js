@@ -2,8 +2,7 @@ import { setWheel } from "./transientState.js"
 
 const wheelChangeHandler = (changeEvent) => {
     if(changeEvent.target.id === "wheel") {
-        const chosenOption = changeEvent.target.value
-        setWheel(parseInt(chosenOption))
+        setWheel(parseInt(changeEvent.target.value), parseInt(changeEvent.target.selectedOptions[0].dataset.price))
     }
 }
 
@@ -15,10 +14,10 @@ export const wheelOptions = async () => {
 
     let wheelHTML = `
         <select id="wheel">
-            <option value="0">Select Option</option>`
+            <option data-price="0" value="0">Select Option</option>`
 
     for (const wheel of wheels) {
-        wheelHTML += `<option value="${wheel.id}">${wheel.sizeStyle}</option>`
+        wheelHTML += `<option data-price="${wheel.price}" value="${wheel.id}">${wheel.sizeStyle}</option>`
     }
     wheelHTML += `</select>`
     return wheelHTML

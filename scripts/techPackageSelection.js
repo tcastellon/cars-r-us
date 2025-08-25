@@ -2,8 +2,7 @@ import { setTechnology } from "./transientState.js"
 
 const techChangeHandler = (changeEvent) => {
     if(changeEvent.target.id === "technology") {
-        const chosenOption = changeEvent.target.value
-        setTechnology(parseInt(chosenOption))
+        setTechnology(parseInt(changeEvent.target.value), parseInt(changeEvent.target.selectedOptions[0].dataset.price))
     }
 }
 
@@ -15,10 +14,10 @@ export const techOptions = async () => {
 
     let techPackagesHTML = `
         <select id="technology">
-            <option value="0">Select Option</option>`
+            <option data-price="0" value="0">Select Option</option>`
 
     for (const tech of techPackages) {
-        techPackagesHTML += `<option value="${tech.id}">${tech.package}</option>`
+        techPackagesHTML += `<option data-price="${tech.price}" value="${tech.id}">${tech.package}</option>`
     }
     techPackagesHTML += `</select>`
     return techPackagesHTML

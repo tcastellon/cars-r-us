@@ -2,8 +2,7 @@ import { setInterior } from "./transientState.js"
 
 const interiorChangeHandler = (changeEvent) => {
     if(changeEvent.target.id === "interior") {
-        const chosenOption = changeEvent.target.value
-        setInterior(parseInt(chosenOption))
+        setInterior(parseInt(changeEvent.target.value), parseInt(changeEvent.target.selectedOptions[0].dataset.price))
     }
 }
 
@@ -15,10 +14,10 @@ export const interiorOptions = async () => {
 
     let interiorHTML = `
         <select id="interior">
-            <option value="0">Select Option</option>`
+            <option data-price="0" value="0">Select Option</option>`
 
     for (const interior of interiors) {
-        interiorHTML += `<option value="${interior.id}">${interior.colorMaterial}</option>`
+        interiorHTML += `<option data-price="${interior.price}" value="${interior.id}">${interior.colorMaterial}</option>`
     }
     interiorHTML += `</select>`
     return interiorHTML
