@@ -97,11 +97,11 @@
       "id": 1
     },
     {
-      "paintColorId": 1,
+      "paintColorId": 2,
       "interiorId": 3,
-      "technologyId": 2,
-      "wheelId": 2,
-      "orderTotal": 7034,
+      "technologyId": 4,
+      "wheelId": 3,
+      "orderTotal": 10298,
       "id": 2
     }
   ]

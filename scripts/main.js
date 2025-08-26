@@ -17,25 +17,23 @@ const render = async () => {
     
     const html = `
     <h1>Select Car Options</h1>
-        <div class="car-options">
+        <div class="car-options1">
             <section class="color-options">
                 <h2>Colors</h2>
                     ${colorOptionsHTML}
             </section>
-        </div>
-        <div class="car-options">
+    
             <section class="interior-options">
                 <h2>Interiors</h2>
                     ${interiorOptionsHTML}
             </section>
         </div>
-        <div class="car-options">
+        <div class="car-options2">
             <section class="tech-options">
                 <h2>Technology Packages</h2>
                     ${techOptionsHTML}
             </section>
-        </div>
-        <div class="car-options">
+        
             <section class="wheel-options">
                 <h2>Wheels</h2>
                     ${wheelOptionsHTML}
