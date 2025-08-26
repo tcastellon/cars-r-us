@@ -7,7 +7,7 @@ const techChangeHandler = (changeEvent) => {
 }
 
 export const techOptions = async () => {
-    const response = await fetch("http://localhost:8088/technologyPackages")
+    const response = await fetch("http://localhost:8088/technologies")
     const techPackages = await response.json()
 
     document.addEventListener("change", techChangeHandler)
