@@ -39,3 +39,20 @@ export const setWheel = (chosenWheel, price) => {
     console.log(transientState)
 }
 
+export const placeOrder = async () => {
+    if((!transientState.paintColorId) && (!transientState.interiorId) && (!transientState.technologyId) && (!transientState.wheelId)) {
+        window.alert("Please make all selections!")
+    } else {
+        const postOrders = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(transientState)
+        }
+        const response = await fetch("http://localhost:8088/customerOrders", postOrders)
+
+        const newOrderEvent = new CustomEvent("newOrderPlaced")
+        document.dispatchEvent(newOrderEvent)
+    }
+}
